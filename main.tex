@@ -13,25 +13,16 @@
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \begin{document}
 
-\title{A Review on Machine Learning Algorithms for Automatic Requirements Classification}
+\title{A Systematic Literature Review on Machine Learning for Automated Requirements Classification}
 
-\author{\IEEEauthorblockN{J. Manuel Pérez-Verdejo}
-\IEEEauthorblockA{\textit{School of Statistics and Informatics} \\
-\textit{Universidad Veracruzana}\\
-Xalapa, Veracruz, México \\
-manuel.vrdjo@gmail.com}
-\and
-\IEEEauthorblockN{Ángel Juan Sánchez-García}
-\IEEEauthorblockA{\textit{School of Statistics and Informatics} \\
-\textit{Universidad Veracruzana}\\
-Xalapa, Veracruz, México \\
-angesanchez@uv.mx}
-\and
-\IEEEauthorblockN{Jorge Octavio Ocharán-Hernández}
-\IEEEauthorblockA{\textit{School of Statistics and Informatics} \\
-\textit{Universidad Veracruzana}\\
-Xalapa, Veracruz, México \\
-jocharan@uv.mx}
+\author{
+\IEEEauthorblockN{J. Manuel Pérez-Verdejo, Ángel Juan Sánchez-García,\\ Jorge Octavio Ocharán-Hernández}
+%\vspace{0.05in}
+\IEEEauthorblockA{\emph{School of Statistics and Informatics} \\
+\emph{Universidad Veracruzana} \\
+Xalapa, Veracruza, México \\
+manuel.vrdjo@gmail.com, angesanchez@uv.mx, jocharan@uv.mx}
+%\vspace{0.05in}
 }
 
 \maketitle
@@ -51,20 +42,29 @@ Requirements Engineering (RE), conceived as a sub-discipline dedicated to encomp
 
 In this regard, it is in the requirements analysis where the customer input results of the elicitation methods are refined into classified requirements for tracing. Thus, in this phase, the requirements analyst classifies the user statements into nine different categories of requirements \cite{Wiegers2013}: business requirements, external interface requirements, quality attributes, data requirements, functional requirements, solution ideas, business rules, user requirements, and constraints.
 
-However, this activity including the elicitation process is usually time-consuming and error-prone \cite{METH20131695}, therefore the application of new techniques that assist in this type of task means a field of opportunity. Thus, the use of machine learning becomes a viable alternative, by dedicating its work to the construction of programs able to automatically improve with the experience \cite{Mitchell:1997:ML:541177}.
+However, this activity including the elicitation process is usually time-consuming and error-prone \cite{Meth2013}, therefore the application of new techniques that assist in this type of task means a field of opportunity. Thus, the use of machine learning becomes a viable alternative, by dedicating its work to the construction of programs able to automatically improve with the experience \cite{Mitchell:1997:ML:541177}.
 
 With the aim to provide initial insight into the application of machine learning strategies to automatically classify software requirements, the present study carries out a systematic literature review, to portrait the state of the art of this field.
 
-This paper is organized as follows. Section \ref{method} describes the research method followed to conduct the review in machine learning algorithms for requirements classification. In Section \ref{conducting}, the conducting process of the systematic review is described, as well as the primary studies found. Section \ref{results} presents the results obtained from data extraction and synthesis performed in the review. In section \ref{discussion} the results found are discussed. Finally, the conclusions and the identified insights are summarized in section \ref{conclusions}.
+This paper is organized as follows. In section \ref{related-work} the related work is presented. Section \ref{method} describes the research method followed to conduct the review in machine learning algorithms for requirements classification. In Section \ref{conducting}, the conducting process of the systematic review is described, as well as the primary studies found. Section \ref{results} presents the results obtained from data extraction and synthesis performed in the review. In section \ref{discussion} the results found are discussed. Finally, the conclusions and the identified insights are summarized in section \ref{conclusions}.
+
+\section{Related Work}
+\label{related-work}
+
+Software Engineering has proven to be a suitable and successful field for automation, as techniques and approaches specific to the Machine Learning area are increasingly being implemented into several processes among the software life-cycle \cite{Zhang2003}. In particular, the activities involving the Requirements Engineering subdisciplines (elicitation, analysis, specification, and validation) \cite{Wiegers2013} have turned into the focus of several tools and frameworks aiming to automatically assist them.
+
+The systematic review conducted by Meth, Brhel, and Maedche \cite{Meth2013} studies the state of the automated requirements elicitation tools, as of 2013. Categorizing the primary studies found by their scope and degree of automation (among others), their approach portraits the novel applications by the following scopes: "Abstraction Identification", "Requirements Model Generation", "Requirements Quality Analysis" and "Requirements Identification". Among their primary studies, 11 papers addressed the requirements identification. However, most of the studies in this category were semi-automatic implementations. This may be due to the fact, that the term "Machine Learning" was not one of the terms that lead the search, restraining the automated part only to results that included the term "automated".
+
+Additionally, in \cite{BINKHONAIN2019100001} Binkhonain and Zhao carried out a systematic literature review on Machine Learning models for identification and classification non-functional requirements(NFR). In this regard, they found several approaches that implement at least one machine learning algorithm. Among their contribution, they summarize the different approaches followed for the Natural Language Processing strategy, being techniques such as stemming, Stopwords removal, and Part-of-Speech the most common. On the other hand, and due to the focus on NFR, their study allows them to identify subcategories related to this kind of requirements, in particular, they highlight three: security, performance, and usability.
 
 \section{Research Method}
 \label{method}
 
-The research method followed to conduct the review was based on the guidelines described by Kitchenham and Charters \cite{Kitchenham2007}. Hence, the procedure was divided into three stages: (1) planning, (2) execution, and (3) reporting, which is shown in section \ref{results}.
+The research method followed to conduct the review was based on the guidelines described by Kitchenham and Charters \cite{Kitchenham2007}. Hence, the procedure was divided into three stages: (1) planning, featured in this section, and (2) conducting, and (3) results, both shown in section \ref{results}.
 
 \subsection{Planning}
 
-In this stage, the following activities that guided the review are described: the establishment of the research questions, definition of the data sources and the search strategy, and the definition of the selection criteria. Those are further described in the following subsections.
+In this phase, the following activities that guided the review are described: the specification of the research questions, definition of the data sources and the search strategy, and the definition of the selection criteria. Those are further described in the following subsections.
 
 \subsubsection{Research Questions}
 
@@ -77,44 +77,44 @@ The research questions elaborated to carry on the systematic review are:
   \item \textit{RQ4: Which requirements categories are the most frequent to train those algorithms?}
 \end{itemize}
 
-The goal of RQ1 is to find evidence of the application of specific machine learning techniques in the RE, specifically in the classification of requirements. However, the classes to be identified are expected as belonging to one of the requirement categories identified by Wiegers and Beatty \cite{Wiegers2013}. Regarding RQ2, it establishes the goal of identifying how to evaluate the proposed models, for this way of comparing results between them.
+The motivation of RQ1 is to find evidence of the application of specific machine learning techniques in the RE, specifically in the classification of requirements. However, the classes to be identified are expected as belonging to one of the requirement categories identified by Wiegers and Beatty \cite{Wiegers2013}. Regarding RQ2, it establishes the goal of identifying how to evaluate the proposed models, for this way of comparing results between them.
 
 The RQ3 is determined to understand the domain in which the model proposals are focused. Therefore, it is possible to know the necessary means to adopt general models to specific domains. On the other hand, RQ4 is focused to know the categories of requirements that have been considered for the application of those classifiers.
 
-\subsubsection{Search Process}
+\subsubsection{Search Strategy}
 
 The search for studies was carried out in four academic databases, access to which is provided by the National Consortium of Scientific and Technological Information Resources (abbreviated CONRICyt in Spanish). Table \ref{tab:selected-databases} shows their names and pages.
 
 \begin{table}[!htbp]
-% table caption is above the table
-\caption{Selected Databases}
-\label{tab:selected-databases}       % Give a unique label
-% For LaTeX tables use
-\begin{tabular}{p{4cm}p{4cm}}
-\hline\noalign{\smallskip}
-Database & URL  \\
-\noalign{\smallskip}\hline\noalign{\smallskip}
-IEEEXplore & https://ieeexplore.ieee.org \\
-ACM Digital Library & https://dl.acm.org \\
-Science Direct & https://www.sciencedirect.com \\
-SpringerLink & https://link.springer.com \\
-\noalign{\smallskip}\hline
-\end{tabular}
+    % table caption is above the table
+    \caption{Selected Databases}
+    \label{tab:selected-databases}       % Give a unique label
+    % For LaTeX tables use
+    \begin{tabular}{p{4cm}p{4cm}}
+        \hline\noalign{\smallskip}
+        Database & URL  \\
+        \noalign{\smallskip}\hline\noalign{\smallskip}
+        IEEEXplore & https://ieeexplore.ieee.org \\
+        ACM Digital Library & https://dl.acm.org \\
+        Science Direct & https://www.sciencedirect.com \\
+        SpringerLink & https://link.springer.com \\
+        \noalign{\smallskip}\hline
+    \end{tabular}
 \end{table}
 
 Additionally, the search process was carried out guided by the three following search strings: 
 
 \begin{itemize}
-  \item\quotes{Requirements Engineering} AND \quotes{Machine Learning}
-  \item\quotes{Software Requirements Elicitation} AND (\quotes{Machine Learning} OR \quotes{Machine Learning Model})
-  \item(\quotes{Machine Learning} OR \quotes{Machine Learning Model}) AND \quotes{Software Requirements Classification}
+  \item\textit{\quotes{Requirements Engineering} AND \quotes{Machine Learning}}
+  \item\textit{\quotes{Software Requirements Elicitation} AND (\quotes{Machine Learning} OR \quotes{Machine Learning Model})}
+  \item\textit{(\quotes{Machine Learning} OR \quotes{Machine Learning Model}) AND \quotes{Software Requirements Classification}}
 \end{itemize}
 
 The first is related to identifying applications belonging to the machine learning area in Requirements Engineering, this in order to find a more general approach for these implementations. The second search string is established as the analysis phase is considered to be the phase immediately following the elicitation \cite{Wiegers2013}. Finally, the third search string is meant to directly identify requirements classification papers.
 
-\subsubsection{Study Selection}
+\subsubsection{Advanced Search}
 
-The searches were performed by applying the first stage of inclusion and exclusion criteria directly to the search engines of the academic databases, in order to reduce results beyond the review scope. With this regard, publications that met the following requirements were collected:
+The first stage of inclusion and exclusion criteria was performed directly to the search engines of the academic databases, in order to reduce results beyond the review scope. With this regard, publications that met the following requirements were collected:
 
 \begin{itemize}
   \item{Published between 2010 and 2019}
@@ -149,10 +149,38 @@ On this matter, inclusion and exclusion criteria were established for the select
 From each identified article once all the criteria have been applied, the following information is collected: title, authors, publication year, source, type of publication, reference, keywords, abstract, and the answer to the research questions addressed.
 Additionally, topic modeling analysis is performed to identify the most frequent terms and trends throughout the identified studies. For this procedure, the transcribed version of the articles featured on their web pages was required. If it wasn't available, the content was extracted directly from the file.
 
+\subsubsection{Data Synthesis}
+
+In order to identify the evidence to answer the research questions, the narrative synthesis method was selected. In this regard, it was possible to extract the information of interest by detailed reading \cite{10.1177/1356389008097871}.
+
+\subsubsection{Quality Assessment}
+
+A seven-question checklist was designed to provide a quality assessment of the primary studies, inspired by the example shown in Kitchenham and Charters’ guidelines \cite{Kitchenham2007}. The questions established for the criteria are presented in table \ref{tab:quality}. Articles that score more than 4 of the questions in the criteria are included.
+
+\begin{table}[!htbp]
+% table caption is above the table
+\caption{Quality Assessment Criteria}
+\label{tab:quality}       % Give a unique label
+% For LaTeX tables use
+\begin{tabular}{p{0.2cm}p{7.8cm}}
+\hline\noalign{\smallskip}
+ID & Criteria \\
+\noalign{\smallskip}\hline\noalign{\smallskip}
+Q1 & Is the aim of the study clearly described? \\
+Q2 & Does the study follow any method? \\
+Q3 & Is it clear what projects were used to construct each model? \\
+Q4 & Is it clear how the model metrics were measured? \\
+Q5 & Were all model construction methods fully defined? \\
+Q6 & Are the categories to classify clearly defined? \\
+Q7 & Are the links between data, interpretation and conclusions clearly expressed? \\
+\noalign{\smallskip}\hline
+\end{tabular}
+\end{table}
+
 \section{Conducting}
 \label{conducting}
 
-Once the searches were made with the predefined criteria in the academic search engines, 325 articles were obtained. From these publications, a superficial review was made regarding the titles and abstracts, to identify potential answers to the research questions. As a result of this preliminary analysis, 55 papers were identified. Moreover, those documents that had already been identified, either in another database or with another search string were excluded, the last to avoid repeated articles. Finally, a detailed reading of the remaining 38 studies was made, until all those that met the criteria were identified, resulting in a total of 13 articles. Figure \ref{fig:rsl} describes this process and Table \ref{tab:studies} shows the studies included in the review, their publication year and source.
+Once the searches were made with the predefined criteria in the academic search engines, 325 articles were obtained. From these publications, a superficial review was made regarding the titles and abstracts, to identify potential answers to the research questions. As a result of this preliminary analysis, 55 papers were identified. Moreover, those documents that had already been identified, either in another database or with another search string were excluded, the last to avoid repeated articles. Finally, a detailed reading of the remaining 38 studies was made, until all those that met the criteria were identified, resulting in a total of 13 articles. Figure \ref{fig:rsl} describes this process and Table \ref{tab:studies} shows the studies included in the review, their publication year and source. Additionally, the quality assortment score of the studies is shown in Table \ref{tab:scores}.
 
 \begin{figure}[!htbp]
     \center{\includegraphics[scale=0.113]
@@ -186,6 +214,32 @@ S13 & Wang et al. \cite{Wang:2018:ACI:3239235.3267428} & 2018 & International Sy
 \end{tabular}
 \end{table}
 
+\begin{table}[!htbp]
+% table caption is above the table
+\caption{Primary Studies Quality Assessment}
+\label{tab:scores}       % Give a unique label
+% For LaTeX tables use
+\begin{tabular}{p{0.4cm}p{0.7cm}p{0.7cm}p{0.7cm}p{0.7cm}p{0.7cm}p{0.7cm}p{0.7cm}}
+\hline\noalign{\smallskip}
+ID & Q1 & Q2 & Q3 & Q4 & Q5 & Q6 & Q7 \\
+\noalign{\smallskip}\hline\noalign{\smallskip}
+    S1 & 1 & 1 & 1 & 1 & 1 & 1 & 0 \\
+    S2 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+    S3 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+    S4 & 1 & 1 & 1 & 0 & 0 & 1 & 1 \\
+    S5 & 1 & 1 & 0 & 1 & 1 & 0 & 1 \\
+    S6 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+    S7 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+    S8 & 1 & 1 & 1 & 1 & 1 & 0 & 1 \\
+    S9 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+    S10 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+    S11 & 1 & 1 & 1 & 1 & 0 & 1 & 0 \\
+    S12 & 1 & 1 & 0 & 1 & 1 & 0 & 1 \\
+    S13 & 1 & 1 & 1 & 1 & 0 & 1 & 1 \\
+\noalign{\smallskip}\hline
+\end{tabular}
+\end{table}
+
 \section{Results}
 \label{results}
 
@@ -202,7 +256,7 @@ Growth in interest in the application of machine learning for software requireme
 \begin{figure}[!htbp]
     \center{\includegraphics[scale=0.18]
         {Figures/publication_years.png}}
-    \caption{\label{fig:publication_years}Identified studies by year}
+    \caption{\label{fig:publication_years}Primary studies by year}
 \end{figure}
 
 \subsubsection{Venue}
@@ -334,10 +388,10 @@ Additionally, some studies carried out their training with information from avai
 
 \subsubsection{RQ4: Which requirements categories are the most frequent to train those algorithms?}
 
-Once the target requirements in the studies have been identified, the comparison between them is shown in Figure \ref{fig:categories_freq}. It is worth highlighting that the dichotomy between Functional and Non-Functional Requirements and the subcategories of the latter are the most recurring category-searches in the articles consulted. Something to note is that the search for this category of requirement is frequently focused on requirements associated with Quality Attributes. Although this classification was not carried out by searching all the categories described in the ISO 25010 standard \cite{ISO25010}, articles were found that did so partially, or even only focused on classifying a specific quality attribute such as security \cite{7732349,6912260}.
+Once the target requirements in the studies have been identified, the comparison between them is shown in Figure \ref{fig:categories_freq}. It is worth highlighting that the dichotomy between Functional and Non-Functional Requirements and the subcategories of the latter are the most recurring category-searches in the articles consulted. Something to note is that the search for this category of requirement is frequently focused on requirements associated to Quality Attributes. Although this classification was not carried out by searching all the attributes described in the ISO 25010 standard \cite{ISO25010}, papers were found that did so partially, or even only focused on classifying a specific quality attribute such as security \cite{7732349,6912260}.
 
 \begin{figure}[!htbp]
-    \center{\includegraphics[scale=0.18]
+    \center{\includegraphics[scale=0.175]
         {Figures/categories_freq.png}}
     \caption{\label{fig:categories_freq}Target requirements categories searched in the studied papers}
     
@@ -351,6 +405,7 @@ In Figure \ref{fig:categories_freq}, the entries counted as Functional Requireme
 Automatic software requirements classification represents an area of increasing interest for Requirement Engineering. Recent advances regarding the application of machine learning techniques to classify these requirements were identified in the present study. Based on the results obtained, areas of opportunity and topics of interest are identified concerning this matter. After reading the articles found, \cite{Cleland-Huang2006} is identified as one of the precursor studies on the subject, so it is proposed to extend the years of searching for future literature reviews, to increase the scope of studies. Concerning the spread of these applications, it was found that the most suitable venue for publishing these studies was the International Requirements Engineering Conference, where several studies were published.
 
 Although several studies that address the use of machine learning in the Requirements Engineering area were found, this paper led to the realization that most of the studies regarding automated requirements classification are meant for academic purposes, despite the results found in practical implementations. Regarding the topics of interest, it was found that one of the applications of most comprehensive resonance is the classification of requirements applied to user reviews. 
+Additionally, several Natural Language Processing strategies were found among the studies, this variation in approaches directly affects the performance of the classifiers. Another variable of resonance that affects the classification accuracy is whether the samples in the training are structured in requirements language or, as found in many other approaches, the samples are unstructured user reviews. Further analysis in the NLP strategies and syntaxis is needed to optimize this process.
 
 \section{Conclusions}
 \label{conclusions}
